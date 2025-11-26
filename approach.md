@@ -10,6 +10,7 @@
 * Liquibase
 * Lombok
 ### React Frontend Hülle erstellen
+`npx create-react-router@latest --template remix-run/react-router-templates/javascript`
 ### Backend und Frontend verbinden
 ### Docker/Docker-Compose vervollständigen 
 
