@@ -29,4 +29,5 @@
 ## ToDo
 * Spring-Security
 * Frontend-Tests
+* Warnings beim Maven-Build bzgl. "A restricted method in java.lang.System has been called"
 * Mockito-Warnings bzgl. Javaagent und Java 25
