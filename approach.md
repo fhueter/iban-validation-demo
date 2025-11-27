@@ -11,7 +11,7 @@
 * Lombok
 ### React Frontend Hülle erstellen
 `npx create-react-router@latest --template remix-run/react-router-templates/javascript`
-### Backend und Frontend verbinden
+### Backend und Frontend "verbinden"
 ### Docker/Docker-Compose vervollständigen 
 
 ## Backend-Logik implementieren
@@ -28,6 +28,12 @@
 
 ## ToDo
 * Spring-Security
-* Frontend-Tests
-* Warnings beim Maven-Build bzgl. "A restricted method in java.lang.System has been called"
+* Frontend- sowie End-To-End-Tests
+* Logging
+
+* Internationale Banken unterstützen
+* Eingabevalidierung beim Anlegen neuer Banken (Frontend & Backend)
+
+* Passwörter auslagern
+* Diverse Warnings beim Maven-Build, z.B. "A restricted method in java.lang.System has been called"
 * Mockito-Warnings bzgl. Javaagent und Java 25

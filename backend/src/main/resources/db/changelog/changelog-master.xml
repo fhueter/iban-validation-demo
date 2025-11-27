@@ -5,6 +5,23 @@
 	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
 
-	<include relativeToChangelogFile="true" file="changelog-structure.xml"/>
-	<include relativeToChangelogFile="true" file="changelog-data.xml"/>
+	<changeSet id="20251127-1" author="FlorianHueter">
+		<createTable tableName="bank">
+			<column autoIncrement="true" name="id" type="BIGINT">
+				<constraints nullable="false" primaryKey="true" primaryKeyName="pk_bank"/>
+			</column>
+			<column name="bank_code" type="VARCHAR(255)">
+				<constraints nullable="false"/>
+			</column>
+			<column name="bic" type="VARCHAR(11)">
+				<constraints nullable="false"/>
+			</column>
+			<column name="name" type="VARCHAR(255)">
+				<constraints nullable="false"/>
+			</column>
+		</createTable>
+	</changeSet>
+	<changeSet id="20251127-2" author="FlorianHueter">
+		<addUniqueConstraint tableName="bank" columnNames="bank_code" constraintName="uc_bank_bankcode"/>
+	</changeSet>
 </databaseChangeLog>
