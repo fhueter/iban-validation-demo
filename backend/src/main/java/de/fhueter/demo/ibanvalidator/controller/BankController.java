@@ -18,7 +18,11 @@ public class BankController {
 	}
 
 	@PostMapping("/validate-iban")
-	public IbanValidationResult validateIban(@RequestBody String ibanToValidate) {
-		return bankService.validateIban(ibanToValidate);
+	public IbanValidationResult validateIban(@RequestBody IbanValidationRequest ibanToValidate) {
+		return bankService.validateIban(ibanToValidate.iban);
+	}
+
+	public record IbanValidationRequest(String iban) {
+
 	}
 }

@@ -6,9 +6,6 @@ export default function BankAdd() {
 					Bank hinzufügen
 				</h1>
 			</header>
-			<div className="max-w-[300px] w-full space-y-6 px-4">
-
-			</div>
 		</div>
 	);
 }
