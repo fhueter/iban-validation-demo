@@ -1,6 +1,7 @@
 package de.fhueter.demo.ibanvalidator.controller;
 
 import de.fhueter.demo.ibanvalidator.service.BankService;
+import de.fhueter.demo.ibanvalidator.view.BankView;
 import de.fhueter.demo.ibanvalidator.view.IbanValidationResult;
 import jakarta.validation.constraints.NotBlank;
 import org.springframework.validation.annotation.Validated;
@@ -19,9 +20,14 @@ public class BankController {
 		this.bankService = bankService;
 	}
 
+	@PostMapping("/create")
+	public BankView createBank(@RequestBody @Validated BankView bankView) {
+		return bankService.createBank(bankView);
+	}
+
 	@PostMapping("/validate-iban")
 	public IbanValidationResult validateIban(@RequestBody @Validated IbanValidationRequest ibanToValidate) {
-		return bankService.validateIban(ibanToValidate.iban);
+		return bankService.validateIban(ibanToValidate.iban());
 	}
 
 	public record IbanValidationRequest(@NotBlank String iban) {

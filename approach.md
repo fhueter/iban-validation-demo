@@ -27,14 +27,21 @@
 * Bank hinzufügen
 
 ## ToDo
+Backend:
 * Spring-Security
 * Logging
-* Frontend- sowie End-To-End-Tests
-
-* Internationale Banken unterstützen
-
-* Passwörter auslagern
 * "Sprechende" Backend-Validierungsfehlermeldungen
-* Frontend-Eingabevalidierungen
+
+Backend (technische Schulden)
+* Passwörter auslagern!
 * Diverse Warnings beim Maven-Build, z.B. "A restricted method in java.lang.System has been called"
 * Mockito-Warnings bzgl. Javaagent und Java 25
+
+Frontend:
+* Frontend- sowie End-To-End-Tests
+* Frontend-Eingabevalidierungen
+* vieles mehr ...
+
+Fachlich:
+* Internationale Banken unterstützen
+

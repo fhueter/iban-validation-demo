@@ -7,7 +7,7 @@ export default function Home() {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		const formData = new FormData(e.target);
-		bankService.validate(formData).then((res) => {
+		bankService.validateIban(formData).then((res) => {
 			setValidationResult(res.data);
 		});
 	};

@@ -7,5 +7,6 @@ const api = axios.create({
 });
 
 export const bankService = {
-	validate: (data) => api.post('/api/bank/validate-iban', data),
+	validateIban: (data) => api.post('/api/bank/validate-iban', data),
+	createBank: (data) => api.post('/api/bank/create', data),
 };
