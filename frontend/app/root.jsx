@@ -1,7 +1,7 @@
-import { isRouteErrorResponse, Outlet, } from "react-router";
+import { isRouteErrorResponse, Outlet, } from "react-router"
 import { Header } from './routes/header.jsx'
 import { Sidebar } from './routes/sidebar.jsx'
-import "./app.css";
+import "./app.css"
 
 export const links = () => [
 	{ rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -15,6 +15,7 @@ export const links = () => [
 export default function App() {
 	return (
 		<>
+			<title>IBAN validation demo</title>
 			<Header />
 			<Sidebar />
 			<main style={{
