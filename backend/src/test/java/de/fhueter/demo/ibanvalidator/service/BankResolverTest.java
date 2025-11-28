@@ -29,7 +29,7 @@ class BankResolverTest extends UnitTest {
 		return Stream.of(
 			arguments("de89 3704 0044 0532 0130 00  ", "37040044"),
 			arguments("DE89370400440532013000", "37040044"),
-			arguments("GB15HBUK40127612345678", null),
+			arguments("GB29NWBK60161331926819", null),
 			arguments("DE1234", null),
 			arguments("", null)
 		);
