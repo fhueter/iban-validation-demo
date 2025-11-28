@@ -28,12 +28,13 @@
 
 ## ToDo
 * Spring-Security
-* Frontend- sowie End-To-End-Tests
 * Logging
+* Frontend- sowie End-To-End-Tests
 
 * Internationale Banken unterstützen
-* Eingabevalidierung beim Anlegen neuer Banken (Frontend & Backend)
 
 * Passwörter auslagern
+* "Sprechende" Backend-Validierungsfehlermeldungen
+* Frontend-Eingabevalidierungen
 * Diverse Warnings beim Maven-Build, z.B. "A restricted method in java.lang.System has been called"
 * Mockito-Warnings bzgl. Javaagent und Java 25
