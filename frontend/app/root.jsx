@@ -1,4 +1,4 @@
-import { isRouteErrorResponse, Outlet, } from "react-router"
+import { isRouteErrorResponse, Links, Outlet, } from "react-router"
 import { Header } from './routes/header.jsx'
 import { Sidebar } from './routes/sidebar.jsx'
 import "./app.css"
@@ -16,6 +16,7 @@ export default function App() {
 	return (
 		<>
 			<title>IBAN validation demo</title>
+			<Links />
 			<Header />
 			<Sidebar />
 			<main style={{
