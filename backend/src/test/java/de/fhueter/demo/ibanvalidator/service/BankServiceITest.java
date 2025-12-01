@@ -16,7 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
-class BankServiceIT extends SpringTest {
+class BankServiceITest extends SpringTest {
 
 	@Autowired
 	BankService bankService;
@@ -35,7 +35,7 @@ class BankServiceIT extends SpringTest {
 	}
 
 	@Nested
-	class CreateBankIT {
+	class CreateBankITest {
 
 		@Test
 		void successful() {
@@ -63,7 +63,7 @@ class BankServiceIT extends SpringTest {
 	}
 
 	@Nested
-	class ValidateIbanIT {
+	class ValidateIbanITest {
 
 		@Test
 		void returnsBankForMatchingBankCode() {
