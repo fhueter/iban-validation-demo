@@ -12,3 +12,4 @@ To get it up and running:
 
 Then open `http://localhost:8080` to access the GUI.
 
+Bank test data in  /supplies/data/banks_de.sql

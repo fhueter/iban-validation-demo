@@ -3,7 +3,7 @@
 ## Maven-Multi-Modul-Projektstruktur erstellen
 ### Docker-Compose-File erstellen (zunächst nur PostgreSQL-Image)
 ### Spring Backend Hülle erstellen
-... unter Zuhilfenahme von Spring Initializr (Maven, Spring 4, JDK 25):
+... unter Zuhilfenahme von Spring Initializr (Maven, Spring Boot 4, JDK 25):
 * Spring Web
 * Spring Data JPA
 * PostgreSQL Driver
