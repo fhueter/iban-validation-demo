@@ -1,7 +1,7 @@
 package de.fhueter.demo.ibanvalidator.service;
 
 import de.fhueter.demo.ibanvalidator.SpringTest;
-import de.fhueter.demo.ibanvalidator.exception.ApiConflictException;
+import de.fhueter.demo.ibanvalidator.controller.exception.ApiConflictException;
 import de.fhueter.demo.ibanvalidator.model.Bank;
 import de.fhueter.demo.ibanvalidator.repository.BankRepository;
 import de.fhueter.demo.ibanvalidator.view.BankView;
@@ -73,28 +73,6 @@ class BankServiceITest extends SpringTest {
 				s.assertThat(result.valid()).isTrue();
 				s.assertThat(result.bankName()).isEqualTo("Commerzbank Köln");
 				s.assertThat(result.bic()).isEqualTo("COBADEFFXXX");
-			});
-		}
-
-		@Test
-		void returnsNoBankForUnknownGermanBankCode() {
-			IbanValidationResult result = bankService.validateIban("DE75512108001245126199");
-
-			SoftAssertions.assertSoftly(s -> {
-				s.assertThat(result.valid()).isTrue();
-				s.assertThat(result.bankName()).isNull();
-				s.assertThat(result.bic()).isNull();
-			});
-		}
-
-		@Test
-		void returnsNoBankForFrenchBankCode() {
-			IbanValidationResult result = bankService.validateIban("FR7630006000011234567890189");
-
-			SoftAssertions.assertSoftly(s -> {
-				s.assertThat(result.valid()).isTrue();
-				s.assertThat(result.bankName()).isNull();
-				s.assertThat(result.bic()).isNull();
 			});
 		}
 

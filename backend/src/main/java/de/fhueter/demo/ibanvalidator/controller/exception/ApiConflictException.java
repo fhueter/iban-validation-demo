@@ -1,4 +1,4 @@
-package de.fhueter.demo.ibanvalidator.exception;
+package de.fhueter.demo.ibanvalidator.controller.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

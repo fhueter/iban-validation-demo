@@ -1,9 +1,10 @@
 package de.fhueter.demo.ibanvalidator.service;
 
-import de.fhueter.demo.ibanvalidator.exception.ApiConflictException;
+import de.fhueter.demo.ibanvalidator.controller.exception.ApiConflictException;
 import de.fhueter.demo.ibanvalidator.model.Bank;
 import de.fhueter.demo.ibanvalidator.repository.BankRepository;
-import de.fhueter.demo.ibanvalidator.util.IbanUtil;
+import de.fhueter.demo.ibanvalidator.service.domain.Iban;
+import de.fhueter.demo.ibanvalidator.service.exception.IbanParseException;
 import de.fhueter.demo.ibanvalidator.view.BankView;
 import de.fhueter.demo.ibanvalidator.view.IbanValidationResult;
 import org.springframework.stereotype.Service;
@@ -14,19 +15,23 @@ public class BankService {
 
 	private final BankRepository bankRepository;
 
-	private final BankResolver bankResolver;
-
-	public BankService(BankRepository bankRepository, BankResolver bankResolver) {
+	public BankService(BankRepository bankRepository) {
 		this.bankRepository = bankRepository;
-		this.bankResolver = bankResolver;
 	}
 
+	@Transactional(readOnly = true)
 	public IbanValidationResult validateIban(String ibanToCheck) {
-		String compactIban = IbanUtil.toCompactFormat(ibanToCheck);
-		if (!IbanUtil.isValid(compactIban)) {
+		Iban iban;
+		try {
+			iban = Iban.parse(ibanToCheck);
+		} catch (IbanParseException _) {
 			return IbanValidationResult.invalid();
 		}
-		return IbanValidationResult.valid(bankResolver.findBankByIban(compactIban));
+		String bankCode = iban.getBankCode();
+		if (bankCode == null) {
+			return IbanValidationResult.valid(null);
+		}
+		return IbanValidationResult.valid(bankRepository.findByBankCode(bankCode));
 	}
 
 	@Transactional
